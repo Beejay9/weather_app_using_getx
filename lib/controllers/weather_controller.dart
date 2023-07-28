@@ -137,6 +137,7 @@ class WeatherController extends GetxController {
 
       final weatherResponse = await http.get(Uri.parse(currentWeatherApi));
       final daysResponse = await http.get(Uri.parse(daysUrl));
+
       final weatherData = jsonDecode(weatherResponse.body)['data']['timelines']
           [0]['intervals'] as List;
 
